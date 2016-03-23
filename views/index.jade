@@ -1,5 +1,58 @@
 extends layout
 
+//style.
+    .input-group-addon {
+        min-width: 120px;
+        text-align: right;
+    }
+//    h1= title
+//    p Welcome to #{title}
+
 block content
-  h1= title
-  p Welcome to #{title}
+    <br /><br />
+    div.col-xs-6.col-xs-offset-3.well
+        div.row
+            div.col-xs-9
+                h1#titulo Acesso
+                p(style='white-space:pre;')
+                    | Introduza os seus dados de acesso
+                    | ou use o seu cartão RFID
+            div.col-xs-3
+                br
+                span.fa.fa-key.fa-5x
+
+        form#target(method='post')
+            input(type='submit', style='display:none')
+            div.form-group
+                div.input-group
+                    span.input-group-addon Username
+                    input.form-control.col-xs-6(type='text', size=20)
+            div.form-group
+                div.input-group
+                    span.input-group-addon Palavra-passe
+                    input.form-control.col-xs-6(type='text', size=20)
+
+    <br /><br />
+    div.container-fluid
+        div.row
+            div.col-xs-2.col-xs-offset-2
+                button.btn.btn-block.btn-primary#production(type="submit")
+                    span.fa.fa-2x.fa-cogs
+                    <br /> Producao
+            div.col-xs-2
+                button.btn.btn-block.btn-primary#maintenance(type="submit")
+                    span.fa.fa-2x.fa-medkit
+                    <br /> Manutencao
+            div.col-xs-2
+                button.btn.btn-block.btn-primary#setup(type="submit")
+                    span.fa.fa-2x.fa-sliders
+                    <br /> Preparacao
+            div.col-xs-2
+                button.btn.btn-block.btn-warning#data(type="submit")
+                    span.fa.fa-2x.fa-database
+                    <br /> Dados
+    <br /><br />
+    div
+        p.text-center
+            img(src= '/images/prettl.png', height="15", width="100")
+            |  &copy; 2016
